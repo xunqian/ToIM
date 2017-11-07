@@ -1,0 +1,7 @@
+---- checkticks3 Matches (10 in 2 files) ----
+Main.c (f:\armpoject\toim\code\project\user):		 if((sens_last.SENSORS_STATUS.checkticks3 ==0x00)&&(sens.SENSORS_STATUS.checkticks3 ==0x01))
+Main.c (f:\armpoject\toim\code\project\user):	if((sens_last.SENSORS_STATUS.checkticks3 ==0x01)&&(sens.SENSORS_STATUS.checkticks3 ==0x00))
+Main.c (f:\armpoject\toim\code\project\user):	if((sens.SENSORS_STATUS.checkticks3 ==0)&&(sens_last.SENSORS_STATUS.checkticks3==1))
+Main.c (f:\armpoject\toim\code\project\user):    if(sens.SENSORS_STATUS.checkticks3 != 0)
+Main.c (f:\armpoject\toim\code\project\user):	if((sens.SENSORS_STATUS.checkticks3 ==0)&&(sens_last.SENSORS_STATUS.checkticks3==1))
+Main.h (f:\armpoject\toim\code\project\user):		uint8   checkticks3;//sens3:回收口对射传感器，遮挡为0
