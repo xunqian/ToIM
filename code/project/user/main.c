@@ -1257,6 +1257,14 @@ void test_sensorstatus(RETURN_CODE *re_comm)
 					 //寄存区空
 					 antennaA = DIG_TICKET;
 					 WriteHopper(hopper1,SDP_CMD_CHG);
+					 drop_tic_time = DROP_T1;
+					 while(drop_tic_time)
+					 {
+						 read_sensorstatus();
+						 if(antennaA == EXISTENCE)
+						 	break;
+					 }
+						 
 				 }
 			 }
 		 }
@@ -1279,6 +1287,13 @@ void test_sensorstatus(RETURN_CODE *re_comm)
 					 //寄存区空
 					 antennaA = DIG_TICKET;
 					 WriteHopper(hopper2,SDP_CMD_CHG);
+					 drop_tic_time = DROP_T1;
+					 while(drop_tic_time)
+					 {
+						 read_sensorstatus();
+						 if(antennaA == EXISTENCE)
+						 	break;
+					 }
 				 }
 			 }
 		 }
@@ -1372,7 +1387,7 @@ void normal_working(uint8 cmd,RETURN_CODE *act)
 							  for(time=0;time<3;time++)
 							 {							
 								 SOLE1_ON;
-								 Sole_Open(DCT_T2,EXISTENCE);
+								 Sole_Open(DCT_T3,EXISTENCE);
 								 if(antenna == EXISTENCE) //判断出票成功跳出
 								 {									 
 									 SOLE1_OFF;
@@ -1467,7 +1482,7 @@ void normal_working(uint8 cmd,RETURN_CODE *act)
 						 for(time=0;time<3;time++)
 						 {							
 							 SOLE1_ON;
-							 Sole_Open(DCT_T2,EXISTENCE);
+							 Sole_Open(DCT_T3,EXISTENCE);
 							 if(antenna == EXISTENCE) //判断出票成功跳出
 							 {									 
 								 SOLE1_OFF;
@@ -2232,8 +2247,9 @@ void check_command(void)//检查命令
 						normal_start = 2;
 					} 
 					re_code.MESSAGE.len = 6;
-					cmd_reseive(&re_code);
 					DIG_Tic();
+					cmd_reseive(&re_code);
+					//DIG_Tic();
 					break;
 				}
 				case 0x85:			//售票

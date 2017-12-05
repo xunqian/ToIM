@@ -102,7 +102,7 @@
 #define ROLLBACK 2        //反转
 
 //落票时间
-#define DROP_T1  150
+#define DROP_T1  300
 #define DROP_T2  150
 #define DROP_T3  200
 #define DCT_T1     20

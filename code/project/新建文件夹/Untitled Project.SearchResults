@@ -1,7 +1,48 @@
----- checkticks3 Matches (10 in 2 files) ----
-Main.c (f:\armpoject\toim\code\project\user):		 if((sens_last.SENSORS_STATUS.checkticks3 ==0x00)&&(sens.SENSORS_STATUS.checkticks3 ==0x01))
-Main.c (f:\armpoject\toim\code\project\user):	if((sens_last.SENSORS_STATUS.checkticks3 ==0x01)&&(sens.SENSORS_STATUS.checkticks3 ==0x00))
-Main.c (f:\armpoject\toim\code\project\user):	if((sens.SENSORS_STATUS.checkticks3 ==0)&&(sens_last.SENSORS_STATUS.checkticks3==1))
-Main.c (f:\armpoject\toim\code\project\user):    if(sens.SENSORS_STATUS.checkticks3 != 0)
-Main.c (f:\armpoject\toim\code\project\user):	if((sens.SENSORS_STATUS.checkticks3 ==0)&&(sens_last.SENSORS_STATUS.checkticks3==1))
-Main.h (f:\armpoject\toim\code\project\user):		uint8   checkticks3;//sens3:回收口对射传感器，遮挡为0
+---- antennaA Matches (47 in 5 files) ----
+Main.c (f:\armpoject\toim\code\project\user):        antennaA = EXISTENCE;
+Main.c (f:\armpoject\toim\code\project\user):        antennaA_LED_ON;
+Main.c (f:\armpoject\toim\code\project\user):        antennaA = INEXISTENCE;
+Main.c (f:\armpoject\toim\code\project\user):        antennaA_LED_OFF;
+Main.c (f:\armpoject\toim\code\project\user):    antennaA= INEXISTENCE;   //清空备票区标志
+Main.c (f:\armpoject\toim\code\project\user):    antennaA= INEXISTENCE;   //清空备票区标志
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == INEXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):					 antennaA = DIG_TICKET;
+Main.c (f:\armpoject\toim\code\project\user):						 if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):			 antennaA= EMPTY;
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == INEXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):					 antennaA = DIG_TICKET;
+Main.c (f:\armpoject\toim\code\project\user):			 antennaA = EMPTY;
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == EXISTENCE)//备票区有票
+Main.c (f:\armpoject\toim\code\project\user):							 if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):						 if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == Hopper1_Outcoin_sens_err)
+Main.c (f:\armpoject\toim\code\project\user):				 else if(antennaA == Hopper1_Clrcoin_sole_err)
+Main.c (f:\armpoject\toim\code\project\user):					 if(antennaA == DIG_TICKET)
+Main.c (f:\armpoject\toim\code\project\user):							 if(antennaA != DIG_TICKET)
+Main.c (f:\armpoject\toim\code\project\user):					 if((drop_tic_time == 0 )|| (antennaA != EXISTENCE))
+Main.c (f:\armpoject\toim\code\project\user):			  //   if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == EXISTENCE)//备票区有票
+Main.c (f:\armpoject\toim\code\project\user):							 if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):						 if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):				 if(antennaA == Hopper2_Outcoin_sens_err)
+Main.c (f:\armpoject\toim\code\project\user):				 else if(antennaA == Hopper2_Clrcoin_sole_err)
+Main.c (f:\armpoject\toim\code\project\user):					 if(antennaA == DIG_TICKET)
+Main.c (f:\armpoject\toim\code\project\user):							 if(antennaA != DIG_TICKET)
+Main.c (f:\armpoject\toim\code\project\user):					 if((drop_tic_time == 0 )|| (antennaA != EXISTENCE))
+Main.c (f:\armpoject\toim\code\project\user):			  //   if(antennaA == EXISTENCE)
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = Hopper1_Outcoin_sens_err;
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = Hopper1_Clrcoin_sole_err;
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = Hopper2_Outcoin_sens_err;
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = Hopper2_Clrcoin_sole_err;
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = EMPTY;
+Main.c (f:\armpoject\toim\code\project\user):            antennaA = EMPTY;
+Reg.h (f:\armpoject\toim\code\project\user):#define  antennaA_LED_ON    GPIO_WriteBit(OUT3_PORT, OUT3_BIT_NUM, Bit_SET)
+Reg.h (f:\armpoject\toim\code\project\user):#define  antennaA_LED_OFF   GPIO_WriteBit(OUT3_PORT, OUT3_BIT_NUM, Bit_RESET)
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):						//antennaA = EXISTENCE;
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):							antennaA = NO_STA;
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):							antennaA = INEXISTENCE;
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):	                    //antennaA= EXISTENCE;
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):	                        antennaA = NO_STA;
+Stm32f10x_it.c (f:\armpoject\toim\code\project\user):	                        antennaA = INEXISTENCE;
+Variables_def.c (f:\armpoject\toim\code\project\user): uint8 antennaA = 0;		  //备票区是否有卡标志
+Variables_def.h (f:\armpoject\toim\code\project\user):extern uint8 antennaA ;          //备票区是否有卡标志
